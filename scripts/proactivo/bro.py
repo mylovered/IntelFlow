@@ -1,7 +1,7 @@
 '''
 Created on Apr 7, 2015
 
-@author: richardqa2
+@author: Javier Richard Quinto Ancieta
 '''
 import requests, json
 import json
@@ -35,9 +35,6 @@ def parse_match(match_field):
 
     return match_str
 
-# Post request
-# d = []
-# newflow=[]
 def post_dict(url, d):
 
     r = requests.put(url, json.dumps(d), headers={'Content-Type' : 'application/json'}, auth=('admin', 'admin'))
@@ -101,12 +98,7 @@ if __name__ == "__main__":
     # Test flow addition 
     array = []
     def test_flow_add():
-#        install_flag = input('Enter install flag:')
-#        if (install_flag == '1'):
         install = 'true'
-#        else:
-#            install = 'false'
-
 ######
 # INTELIGENCIA
         a = '/usr/local/bro/bin/bro-cut < /home/bro1/INTEL/infrastructure_scan.intel'
@@ -130,20 +122,10 @@ if __name__ == "__main__":
                 nodeconnector = 1
                 ether_type = 0x800
                 dst_mac = 'e2:0b:ac:94:a9:db'
-#                lstflow=[]
-#                print(ln(data)) 
-#                print((data[0].split())[4])
-#                print(data[1])                  
-#                for j in range(0, len(data)):                    
                 if ((line.split())[1] == "Intel::ADDR"):
                      indicator == (line.split())[0];
                      if not lstflow.__contains__(indicator):
                         lstflow.append(indicator)
-                        #if srcdst == lstflow[0]:   
-#                        print("test2")
-#                     if(lstflow.contained(dst_ip + "," + src_ip)==falso)
-#                     if(lstflow)
-#                     if(dst_ip == (line.split())[4] and src_ip == (line.split())[2]):
                         priori = 500 + j
                         fname = ('flow%s' %j)
                         j+=1
